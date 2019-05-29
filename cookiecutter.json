@@ -1,0 +1,13 @@
+{
+  "project_name": "PyPackage Project Skeleton",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "package_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+  "project_short_description": "Doug's boilerplate Python package skeleton.",
+  "full_name": "Douglas Daly",
+  "email": "contact@douglasdaly.com",
+  "github_username": "douglasdaly",
+  "python_version": ">=3.5",
+  "create_author_file": "y",
+  "create_notices_file": "n",
+  "license": ["MIT", "Not open source"]
+}
