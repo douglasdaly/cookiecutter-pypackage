@@ -23,11 +23,11 @@ from .settings import CONTEXT_SETTINGS
 @group(cls=MainCLI, invoke_without_command=True,
        context_settings=CONTEXT_SETTINGS)
 @pass_context
-@version_option(prog_name=style('{{ cookiecutter.package_name }}', bold=True),
+@version_option(prog_name=style('{{ cookiecutter.cli_name }}', bold=True),
                 version=__version__)
 def cli(ctx):
     """
-    {{ cookiecutter.package_name }} CLI
+    {{ cookiecutter.project_name }} CLI
 
       {{ cookiecutter.project_short_description }}
 

@@ -23,6 +23,7 @@ import invoke
 
 from .helpers import TODO_CMD
 from .helpers import VERSION
+from .helpers import convert_rst_to_markdown
 from .helpers import create_change_item
 from .helpers import ctx_run
 from .helpers import get_todos
@@ -50,7 +51,11 @@ def create_docs_changelog(new_entry, write=True):
     curr_files = [os.path.basename(x) for x in curr_files]
 
     p = re.compile(r"^changelog_(\d+)\.rst$")
-    next_idx = int(sorted([p.match(f).groups()[0] for f in curr_files])[-1])+1
+    indices = sorted([p.match(f).groups()[0] for f in curr_files])
+    if indices:
+        next_idx = int(indices[-1])+1
+    else:
+        next_idx = 1
     new_file = os.path.join(base_dir, 'changelog_%s.rst' % next_idx)
 
     contents = new_entry.split('\n')

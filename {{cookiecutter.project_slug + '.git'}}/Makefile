@@ -125,20 +125,6 @@ help: ## Displays this help message
 clean: ## Delete all compiled Python files or temp files
 	@rm -rf $(GARBAGE)
 
-setup: venv-create requirements ## Sets up the environment
-	$(if $(DIRENV),$(DIRENV) allow,)
-
-teardown: venv-remove ## Removes the environment
-	$(if $(DIRENV),$(DIRENV) deny,)
-
-# Virtual environment
-
-venv-create:
-	$(CREATE_VENV)
-
-venv-remove:
-	$(REMOVE_VENV)
-
 # Requirements
 
 requirements: ## Installs Python dependencies
@@ -160,8 +146,11 @@ docs: ## Generates the sphinx HTML documentation
 clean-docs: ## Cleans the generated documentation
 	@cd docs/ && $(RUN_PRE) make clean
 
-generate-docs: ## Generates the documentation files from the source files
-	@cd docs/ && $(RUN_PRE) sphinx-apidoc -e -M -o api ../src/spines
+-clean-apidoc:
+	$(INVOKE) docs.clean-apidocs
+
+generate-docs: -clean-apidoc ## Generates the documentation files from the source files
+	@cd docs/ && $(RUN_PRE) sphinx-apidoc -e -M -o api ../src/{{ cookiecutter.package_name }}
 	$(INVOKE) docs.generate-make
 
 # Changes
@@ -221,3 +210,4 @@ clean-build: ## Clean out the compiled package files
 
 upload: ## Uploads the package to the PyPI server
 	$(TWINE) upload dist/*
+

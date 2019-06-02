@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Setup file for Spines library.
+Setup file for {{ cookiecutter.package_name }} package.
 
 Incorporates code from:
     https://github.com/sarugaku/cookiecutter-python-package
@@ -52,7 +52,7 @@ setup(
     packages=find_packages('src', include=['{{ cookiecutter.package_name }}', '{{ cookiecutter.package_name }}.*']),
     entry_points={
         "console_scripts": [
-            "{{ cookiecutter.package_name }}={{ cookiecutter.package_name }}.cli:cli",
+            "{{ cookiecutter.cli_name }}={{ cookiecutter.package_name }}.cli:cli",
         ]
     },
 
@@ -70,7 +70,7 @@ setup(
     },
 
     project_urls={
-        'Source Code': 'https://www.github.com/{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}',
+        'Source Code': 'https://www.github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
         'Documentation': 'https://{{ cookiecutter.project_slug }}.readthedocs.io/',
     }
 )

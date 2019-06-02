@@ -5,6 +5,7 @@ Documentation related tasks.
 #
 #   Imports
 #
+from glob import glob
 import os
 import re
 
@@ -46,3 +47,15 @@ def generate_make(ctx):
         fout.writelines(output)
 
     return
+
+
+@invoke.task
+def clean_apidocs(ctx):
+    """Cleans the auto-generated API documentation files"""
+    log('Cleaning API documentation')
+    for f in glob(os.path.join('docs', 'api', '*.rst')):
+        if f in ('modules.rst', '{{ cookiecutter.package_name }}.rst'):
+            continue
+        os.remove(f)
+    return
+

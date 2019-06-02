@@ -1,10 +1,11 @@
+{% set is_open_source = cookiecutter.license != 'Not open source' -%}
 {% for _ in cookiecutter.project_name %}#{% endfor %}
 {{ cookiecutter.project_name }}
 {% for _ in cookiecutter.project_name %}#{% endfor %}
 
 *{{ cookiecutter.project_short_description }}*
-
-|pypi| |nbsp| |travis| |nbsp| |cov| |nbsp| |docs| |nbsp| |pyvers|
+{%- if is_open_source %}
+|pypi| |nbsp| |travis| |nbsp| |cov| |nbsp| |docs| |nbsp| |pyvers| {% endif -%}
 
 
 Installation
@@ -44,9 +45,10 @@ About
     :hidden:
 
     api/modules
-    contributing
+    {%- if is_open_source %}contributing
     conduct
     authors
+    development/development.main{% endif -%}
     changelogs/changelogs
     license
 
@@ -59,6 +61,7 @@ Indices and tables
 * :ref:`search`
 
 
+{%- if is_open_source %}
 .. |pyvers| image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.package_name }}.svg
     :target: https://pypi.org/projects/{{ cookiecutter.package_name }}/
     :alt: Supported Python Versions
@@ -76,3 +79,4 @@ Indices and tables
     :alt: Coverage
 .. |nbsp| unicode:: 0xA0
    :trim:
+{% endif -%}

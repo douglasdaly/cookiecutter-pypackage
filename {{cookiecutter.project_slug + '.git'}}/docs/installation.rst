@@ -2,6 +2,7 @@
 Installation
 ############
 
+{% if cookiecutter.license != 'Not open source' -%}
 You can install ``{{ cookiecutter.package_name }}`` in one of two ways: either from the PyPI
 package (the most common way) or from the source code.
 
@@ -39,3 +40,6 @@ git repository:
     $ git clone https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_name }}.git
 
 Then install with your preferred package manager.
+{% else -%}
+*Add instructions for installation here.*
+{% endif %}

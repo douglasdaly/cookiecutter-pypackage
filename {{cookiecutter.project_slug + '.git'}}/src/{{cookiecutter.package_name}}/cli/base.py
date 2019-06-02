@@ -16,7 +16,7 @@ from .utils import is_truthy
 
 class MainCLI(Group):
     """
-    Customized click group class for {{ cookiecutter.package_name }} CLI
+    Customized click group class for CLI
     """
 
     def parse_args(self, ctx, args):

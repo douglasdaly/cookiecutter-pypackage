@@ -42,6 +42,17 @@ def create_change_item(reference, context, message):
     return file
 
 
+def log(msg, name=None, level=None):
+    """Prints output to the screen"""
+    ret = ''
+    if name:
+        ret += "[%s] " % name.lower()
+    if level:
+        ret += "(%s) " % level.upper()
+    print(ret + msg)
+    return
+
+
 def ctx_run(ctx, cmd, draft=False, log_fn=log):
     """Helper to either run cmd or just display it"""
     if draft:
@@ -82,17 +93,6 @@ def insert_text(original, new, after):
             for new_line in new.split('\n'):
                 ret.append(new_line)
     return '\n'.join(ret)
-
-
-def log(msg, name=None, level=None):
-    """Prints output to the screen"""
-    ret = ''
-    if name:
-        ret += "[%s] " % name.lower()
-    if level:
-        ret += "(%s) " % level.upper()
-    print(ret + msg)
-    return
 
 
 def print_block(text):
