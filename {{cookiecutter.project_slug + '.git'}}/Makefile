@@ -176,10 +176,10 @@ changelog-draft: ## Generates the draft new CHANGELOG.draft.md file
 # Code
 
 lint: ## Lint using flake8
-	$(FLAKE8) src/spines/
+	$(FLAKE8) src/{{ cookiecutter.package_name }}/
 
 coverage: ## Runs code coverage checks over the codebase
-	$(PYTEST) --cov=src/spines -n $(PYTEST_CORES)
+	$(PYTEST) --cov=src/{{ cookiecutter.package_name }} -n $(PYTEST_CORES)
 
 # Unit testing
 
