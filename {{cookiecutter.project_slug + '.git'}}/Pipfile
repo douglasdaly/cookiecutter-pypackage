@@ -4,7 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-{{ cookiecutter.package_name }} = {path = ".",editable = true}
+{{ cookiecutter.package_name|replace('_', '-') }} = {path = ".",editable = true}
 click = "*"
 
 [dev-packages]

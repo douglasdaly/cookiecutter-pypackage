@@ -19,7 +19,7 @@
 Install using your package manager of choice, `pipenv` for instance:
 
 ```bash
-$ pipenv install {{ cookiecutter.package_name }}
+$ pipenv install {{ cookiecutter.package_name|replace('_', '-') }}
 ```
 {%- endif %}
 
