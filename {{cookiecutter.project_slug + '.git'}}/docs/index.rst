@@ -4,6 +4,7 @@
 {% for _ in cookiecutter.project_name %}#{% endfor %}
 
 *{{ cookiecutter.project_short_description }}*
+
 {%- if is_open_source %}
 |pypi| |nbsp| |travis| |nbsp| |cov| |nbsp| |docs| |nbsp| |pyvers| {% endif -%}
 

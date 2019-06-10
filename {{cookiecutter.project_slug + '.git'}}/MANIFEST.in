@@ -1,6 +1,6 @@
 include AUTHORS LICENSE* README*
 include CHANGELOG.*
-{% if cookiecutter.create_notices_file != 'n' %}
+{%- if cookiecutter.create_notices_file != 'n' %}
 include NOTICES
 {%- endif %}
 
@@ -17,19 +17,15 @@ exclude pytest.ini
 exclude requirements*.txt
 exclude tox.ini
 
-{% if cookiecutter.create_notices_file != 'n' %}
+{%- if cookiecutter.create_notices_file != 'n' %}
 recursive-include src/{{ cookiecutter.package_name }}/_vendored *.LICENSE
 {%- endif %}
 
-recursive-include docs Makefile *.bat *.py *.rst
-recursive-include docs *.png *.txt
-recursive-exclude docs requirements*.txt
-recursive-include docs/_templates *.html
-recursive-include docs/_static *.js *.css *.png
-
+prune .githooks
 prune .github
-prune docs/_build
+prune docs
 prune changes
+prune examples
 prune tasks
 prune tests
 prune todos
