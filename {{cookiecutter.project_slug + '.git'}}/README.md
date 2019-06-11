@@ -31,5 +31,5 @@ $ pipenv install {{ cookiecutter.package_name|replace('_', '-') }}
 
 ## License
 
-{{ cookiecutter.project_name }} &copy; Copyright {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}.  ALl rights reserved. {% if is_open_source %}This project is licensed under the {{ cookiecutter.license }} License, see the [`LICENSE`](./LICENSE "License File") file for more details.{% endif %}
+{{ cookiecutter.project_name }} &copy; Copyright {% now 'local', '%Y' %}, {{ cookiecutter.full_name }}.  All rights reserved. {% if is_open_source %}This project is licensed under the {{ cookiecutter.license }} License, see the [`LICENSE`](./LICENSE "License File") file for more details.{% endif %}
 
