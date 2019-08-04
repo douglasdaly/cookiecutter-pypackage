@@ -3,9 +3,6 @@
 """
 Commands for the {{ cookiecutter.package_name }} CLI.
 """
-#
-#   Imports
-#
 from click import group
 from click import pass_context
 from click import style
@@ -15,10 +12,6 @@ from ..__version__ import __version__
 from .base import MainCLI
 from .settings import CONTEXT_SETTINGS
 
-
-#
-#   Click commands
-#
 
 @group(cls=MainCLI, invoke_without_command=True,
        context_settings=CONTEXT_SETTINGS)
@@ -35,10 +28,5 @@ def cli(ctx):
     pass
 
 
-#
-#   Entry-point
-#
-
 if __name__ == '__main__':
     cli()
-

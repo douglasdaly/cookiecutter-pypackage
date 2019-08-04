@@ -2,15 +2,8 @@
 """
 Utilities for the CLI interface.
 """
-#
-#   Imports
-#
 import os
 
-
-#
-#   Utility functions
-#
 
 def is_truthy(name):
     """Gets whether or not the  given environment variable is 'truthy'
@@ -41,4 +34,3 @@ def is_truthy(name):
             return ret > 0
         return True
     return False
-

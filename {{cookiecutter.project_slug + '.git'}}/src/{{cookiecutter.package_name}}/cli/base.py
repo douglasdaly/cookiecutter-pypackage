@@ -2,17 +2,10 @@
 """
 Base objects for the CLI interface.
 """
-#
-#   Imports
-#
 from click import Group
 
 from .utils import is_truthy
 
-
-#
-#   Click customizations
-#
 
 class MainCLI(Group):
     """
