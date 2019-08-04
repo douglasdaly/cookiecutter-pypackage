@@ -135,7 +135,7 @@ update-requirements: -update-requirements-actual generate-requirements ## Update
 -update-requirements-actual:
 	$(UPDATE_DEPS)
 
-generate-requirements:
+generate-requirements: ## Generates the projects requirements txt files.
 	$(GENERATE_DEPS)
 
 # Documentation
