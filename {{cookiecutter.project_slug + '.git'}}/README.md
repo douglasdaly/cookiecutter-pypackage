@@ -3,7 +3,7 @@
 
 *{{ cookiecutter.project_short_description }}*
 
-{% if is_open_source %}
+{%- if is_open_source %}
 [![PyPI Version](https://img.shields.io/pypi/v/{{ cookiecutter.package_name }}.svg)](https://pypi.org/project/{{ cookiecutter.package_name }}/ "PyPI Page")
 [![Build Status](https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg?branch=master)](https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }} "Travis CI")
 [![Coverage Status](https://coveralls.io/repos/github/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/badge.svg)](https://coveralls.io/github/{{ cookiecutter.github_username }}/{{cookiecutter.project_slug }} "Coveralls")
