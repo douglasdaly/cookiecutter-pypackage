@@ -9,9 +9,6 @@ Contributor email code borrowed from the pip project:
     https://github.com/pypa/pip/blob/master/tasks/generate.py
 
 """
-#
-#   Imports
-#
 import datetime
 import glob
 import os

@@ -2,25 +2,14 @@
 """
 Helper functions for tasks.
 """
-#
-#   Imports
-#
 import os
 import subprocess
 
 from {{ cookiecutter.package_name }} import __version__
 
 
-#
-#   Constants
-#
-
 VERSION = __version__
 
-
-#
-#   Functions
-#
 
 def convert_rst_to_markdown(content):
     """Convert an rst file to markdown"""
@@ -104,9 +93,4 @@ def print_block(text):
     return
 
 
-#
-#   Variables
-#
-
 TODO_CMD = get_alias_cmd(os.getenv('TODO_CMD', 'todo.sh'))
-
